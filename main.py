@@ -10,6 +10,7 @@ class Calculator:
         self.root = tk.Tk()
         self.root.title(title)
         self.root.geometry(geometry)
+        self.root.configure(bg="#212121")  # z.B. hellgrau
         self.entry = tk.Entry(self.root, width=30)
         self.entry.pack(pady=5)
 
@@ -19,38 +20,42 @@ class Calculator:
         # Frame 1
         self.frame1 = tk.Frame(self.root)
         self.frame1.pack(side="top", pady=10)
+        self.frame1.configure(bg="#212121")
 
         # Frame 2
         self.frame2 = tk.Frame(self.root)
         self.frame2.pack(side="top", pady=5)
+        self.frame2.configure(bg="#212121")
 
         # Frame 3
         self.frame3 = tk.Frame(self.root)
         self.frame3.pack(side="top", pady=5)
+        self.frame3.configure(bg="#212121")
 
         # Frame 4
         self.frame4 = tk.Frame(self.root)
         self.frame4.pack(side="top", pady=5)
+        self.frame4.configure(bg="#212121")
 
-        tk.Button(self.frame1, text="7", width=3, height=3, command=lambda: self.numberButtonClicked(7)).pack(side="left", padx=10, pady=10)
-        tk.Button(self.frame1, text="8", width=3, height=3, command=lambda: self.numberButtonClicked(8)).pack(side="left", padx=10, pady=10)
-        tk.Button(self.frame1, text="9", width=3, height=3, command=lambda: self.numberButtonClicked(9)).pack(side="left", padx=10, pady=10)
-        tk.Button(self.frame1, text="*", width=3, height=3, command=lambda: self.numberButtonClicked('*')).pack(side="left", padx=10, pady=10)
+        tk.Button(self.frame1, text="7", width=3, height=3, bg="#ED775A",  fg="white", command=lambda: self.numberButtonClicked(7)).pack(side="left", padx=10, pady=10)
+        tk.Button(self.frame1, text="8", width=3, height=3, bg="#ED775A",  fg="white", command=lambda: self.numberButtonClicked(8)).pack(side="left", padx=10, pady=10)
+        tk.Button(self.frame1, text="9", width=3, height=3, bg="#ED775A",  fg="white", command=lambda: self.numberButtonClicked(9)).pack(side="left", padx=10, pady=10)
+        tk.Button(self.frame1, text="*", width=3, height=3, bg="#33A1E0",  fg="white", command=lambda: self.numberButtonClicked('*')).pack(side="left", padx=10, pady=10)
 
-        tk.Button(self.frame2, text="4", width=3, height=3, command=lambda: self.numberButtonClicked(4)).pack(side="left", padx=10, pady=10)
-        tk.Button(self.frame2, text="5", width=3, height=3, command=lambda: self.numberButtonClicked(5)).pack(side="left", padx=10, pady=10)
-        tk.Button(self.frame2, text="6", width=3, height=3, command=lambda: self.numberButtonClicked(6)).pack(side="left", padx=10, pady=10)
-        tk.Button(self.frame2, text="-", width=3, height=3, command=lambda: self.numberButtonClicked('-')).pack(side="left", padx=10, pady=10)
+        tk.Button(self.frame2, text="4", width=3, height=3, bg="#ED775A",  fg="white", command=lambda: self.numberButtonClicked(4)).pack(side="left", padx=10, pady=10)
+        tk.Button(self.frame2, text="5", width=3, height=3, bg="#ED775A",  fg="white", command=lambda: self.numberButtonClicked(5)).pack(side="left", padx=10, pady=10)
+        tk.Button(self.frame2, text="6", width=3, height=3, bg="#ED775A",  fg="white", command=lambda: self.numberButtonClicked(6)).pack(side="left", padx=10, pady=10)
+        tk.Button(self.frame2, text="-", width=3, height=3, bg="#33A1E0",  fg="white", command=lambda: self.numberButtonClicked('-')).pack(side="left", padx=10, pady=10)
 
-        tk.Button(self.frame3, text="1", width=3, height=3, command=lambda: self.numberButtonClicked(1)).pack(side="left", padx=10, pady=10)
-        tk.Button(self.frame3, text="2", width=3, height=3, command=lambda: self.numberButtonClicked(2)).pack(side="left", padx=10, pady=10)
-        tk.Button(self.frame3, text="3", width=3, height=3, command=lambda: self.numberButtonClicked(3)).pack(side="left", padx=10, pady=10)
-        tk.Button(self.frame3, text="+", width=3, height=3, command=lambda: self.numberButtonClicked('+')).pack(side="left", padx=10, pady=10)
+        tk.Button(self.frame3, text="1", width=3, height=3, bg="#ED775A",  fg="white", command=lambda: self.numberButtonClicked(1)).pack(side="left", padx=10, pady=10)
+        tk.Button(self.frame3, text="2", width=3, height=3, bg="#ED775A",  fg="white", command=lambda: self.numberButtonClicked(2)).pack(side="left", padx=10, pady=10)
+        tk.Button(self.frame3, text="3", width=3, height=3, bg="#ED775A",  fg="white", command=lambda: self.numberButtonClicked(3)).pack(side="left", padx=10, pady=10)
+        tk.Button(self.frame3, text="+", width=3, height=3, bg="#33A1E0",  fg="white", command=lambda: self.numberButtonClicked('+')).pack(side="left", padx=10, pady=10)
 
-        tk.Button(self.frame4, text="AC", width=3, height=3, command=lambda: self.clearOperations()).pack(side="left", padx=10, pady=10)
-        tk.Button(self.frame4, text="0", width=3, height=3, command=lambda: self.numberButtonClicked(0)).pack(side="left", padx=10, pady=10)
-        tk.Button(self.frame4, text=",", width=3, height=3, command=lambda: self.numberButtonClicked(',')).pack(side="left", padx=10, pady=10)
-        tk.Button(self.frame4, text="=", width=3, height=3, command=lambda: self.startCalculating()).pack(side="left", padx=10, pady=10)
+        tk.Button(self.frame4, text="AC", width=3, height=3, bg="#1C6EA4",  fg="white", command=lambda: self.clearOperations()).pack(side="left", padx=10, pady=10)
+        tk.Button(self.frame4, text="0", width=3, height=3, bg="#ED775A",  fg="white", command=lambda: self.numberButtonClicked(0)).pack(side="left", padx=10, pady=10)
+        tk.Button(self.frame4, text=",", width=3, height=3, bg="#ED775A",  fg="white", command=lambda: self.numberButtonClicked(',')).pack(side="left", padx=10, pady=10)
+        tk.Button(self.frame4, text="=", width=3, height=3, bg="#E4004B",  fg="white", command=lambda: self.startCalculating()).pack(side="left", padx=10, pady=10)
 
     def start(self):
         self.root.mainloop()
