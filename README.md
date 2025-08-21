@@ -1,5 +1,5 @@
 # Simple Calculator
 
-## Python & Tkint
+with Python & Tkint 🚀
 
 ![Bild](image.png)
